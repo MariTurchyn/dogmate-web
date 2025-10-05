@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - DogMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="logo.png.jpg" alt="Company Logo" class="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search icon"></i></a>
+                <a href="profile.html#gps"><i class="fas fa-map-marker-alt icon"></i></a>
+                <a href="profile.html"><i class="fas fa-user icon"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="profile">
+            <h1>Welcome, <span id="user-email"></span></h1>
+            <nav class="profile-nav">
+                <ul>
+                    <li><a href="#orders">Order History</a></li>
+                    <li><a href="#details">My Details</a></li>
+                    <li><a href="#dog">My Dog</a></li>
+                    <li><a href="#order">Order Dogwalker/Sitter</a></li>
+                    <li><a href="#gps">Live Tracking</a></li>
+                    <li><a href="#chat">Chat</a></li>
+                </ul>
+            </nav>
+            <section id="orders">
+                <h2>Order History</h2>
+                <!-- Display user's order history here -->
+            </section>
+            <section id="details">
+                <h2>My Details</h2>
+                <!-- Display user's personal details here -->
+            </section>
+            <section id="dog">
+                <h2>My Dog</h2>
+                <!-- Display user's dog profile here -->
+            </section>
+            <section id="order">
+                <h2>Order Dogwalker/Sitter</h2>
+                <!-- Provide options to order dog walking or sitting services -->
+            </section>
+            <section id="gps">
+                <h2>Live Tracking</h2>
+                <!-- Implement GPS tracking functionality -->
+            </section>
+            <section id="chat">
+                <h2>Chat</h2>
+                <!-- Implement chat functionality -->
+                <div id="chat-container">
+                    <!-- Chat messages will be displayed here -->
+                </div>
+                <form id="chat-form">
+                    <input type="text" id="chat-message" placeholder="Type a message" required>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>All rights reserved ©</p>
+        <p>ID Numbers: 345210470, 213766108, 213515547, 213503238</p>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                document.getElementById('user-email').textContent = user.email;
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+
+        document.getElementById('logout').addEventListener('click', () => {
+            firebase.auth().signOut().then(() => {
+                window.location.href = 'login.html';
+            }).catch((error) => {
+                console.error('Error logging out: ', error);
+            });
+        });
+
+        const chatForm = document.getElementById('chat-form');
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const message = document.getElementById('chat-message').value;
+            const chatContainer = document.getElementById('chat-container');
+            const newMessage = document.createElement('p');
+            newMessage.textContent = message;
+            chatContainer.appendChild(newMessage);
+            chatForm.reset();
+        });
+    </script>
+</body>
+</html>

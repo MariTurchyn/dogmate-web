@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - DogMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="logo.png.jpg" alt="Company Logo" class="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search icon"></i></a>
+                <a href="profile.html#gps"><i class="fas fa-map-marker-alt icon"></i></a>
+                <a href="profile.html"><i class="fas fa-user icon"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="signup">
+            <h1>Sign Up</h1>
+            <button onclick="showDogOwnerForm()">As a DogOwner</button>
+            <button onclick="showWorkerForm()">As a Worker</button>
+
+            <form id="dogowner-form">
+                <h2>DogOwner Sign Up</h2>
+                <label for="dogowner-first-name">First Name:</label>
+                <input type="text" id="dogowner-first-name" required>
+                <label for="dogowner-last-name">Last Name:</label>
+                <input type="text" id="dogowner-last-name" required>
+                <label for="dogowner-id">ID:</label>
+                <input type="text" id="dogowner-id" required>
+                <label for="dogowner-phone">Phone:</label>
+                <input type="tel" id="dogowner-phone" required>
+                <label for="dogowner-email">Email:</label>
+                <input type="email" id="dogowner-email" required>
+                <label for="dogowner-password">Password:</label>
+                <input type="password" id="dogowner-password" required>
+                <label for="dogowner-city">City:</label>
+                <input type="text" id="dogowner-city" required>
+                <label for="dogowner-street">Street:</label>
+                <input type="text" id="dogowner-street" required>
+                <label for="dogowner-apartment">Apartment:</label>
+                <input type="text" id="dogowner-apartment" required>
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <form id="worker-form">
+                <h2>Worker Sign Up</h2>
+                <label for="worker-first-name">First Name:</label>
+                <input type="text" id="worker-first-name" required>
+                <label for="worker-last-name">Last Name:</label>
+                <input type="text" id="worker-last-name" required>
+                <label for="worker-id">ID:</label>
+                <input type="text" id="worker-id" required>
+                <label for="worker-age">Age:</label>
+                <input type="text" id="worker-age" required>
+                <label for="worker-phone">Phone:</label>
+                <input type="tel" id="worker-phone" required>
+                <label for="worker-email">Email:</label>
+                <input type="email" id="worker-email" required>
+                <label for="worker-password">Password:</label>
+                <input type="password" id="worker-password" required>
+                <label for="worker-cv">Upload CV:</label>
+                <input type="file" id="worker-cv" required>
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <p>Already have an account? <a href="login.html">Log In</a></p>
+			<footer>
+        <p>All rights reserved ©</p>
+        <p>ID Numbers: 345210470, 213766108, 213515547, 213503238</p>
+    </footer>
+        </section>
+		
+    </main>
+	
+    
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
+    <script>
+        function showDogOwnerForm() {
+            document.getElementById('dogowner-form').classList.add('active');
+            document.getElementById('worker-form').classList.remove('active');
+        }
+
+        function showWorkerForm() {
+            document.getElementById('dogowner-form').classList.remove('active');
+            document.getElementById('worker-form').classList.add('active');
+        }
+
+        const dogownerForm = document.getElementById('dogowner-form');
+        dogownerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add Firebase authentication and database logic here
+            window.location.href = 'profile.html';
+        });
+
+        const workerForm = document.getElementById('worker-form');
+        workerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add Firebase authentication and database logic here
+            window.location.href = 'profile.html';
+        });
+    </script>
+	
+</body>
+</html>

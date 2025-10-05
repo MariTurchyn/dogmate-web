@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DogMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="logo.png.jpg" alt="Company Logo" class="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search icon"></i></a>
+                <a href="profile.html#gps"><i class="fas fa-map-marker-alt icon"></i></a>
+                <a href="profile.html"><i class="fas fa-user icon"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="login">
+            <h1>Login</h1>
+            <button onclick="showDogOwnerLogin()">As a DogOwner</button>
+            <button onclick="showWorkerLogin()">As a Worker</button>
+
+            <form id="dogowner-login">
+                <h2>DogOwner Login</h2>
+                <label for="dogowner-email">Email:</label>
+                <input type="email" id="dogowner-email" required>
+                <label for="dogowner-password">Password:</label>
+                <input type="password" id="dogowner-password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="worker-login">
+                <h2>Worker Login</h2>
+                <label for="worker-email">Email:</label>
+                <input type="email" id="worker-email" required>
+                <label for="worker-password">Password:</label>
+                <input type="password" id="worker-password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>All rights reserved ©</p>
+        <p>ID Numbers: 345210470, 213766108, 213515547, 213503238</p>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="firebase-config.js"></script>
+    <script>
+        function showDogOwnerLogin() {
+            document.getElementById('dogowner-login').classList.add('active');
+            document.getElementById('worker-login').classList.remove('active');
+        }
+
+        function showWorkerLogin() {
+            document.getElementById('dogowner-login').classList.remove('active');
+            document.getElementById('worker-login').classList.add('active');
+        }
+
+        const dogownerLogin = document.getElementById('dogowner-login');
+        dogownerLogin.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add Firebase authentication logic here
+            window.location.href = 'profile.html';
+        });
+
+        const workerLogin = document.getElementById('worker-login');
+        workerLogin.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add Firebase authentication logic here
+            window.location.href = 'profile.html';
+        });
+    </script>
+</body>
+</html>

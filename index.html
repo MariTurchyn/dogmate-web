@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - DogMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="logo.png.jpg" alt="Company Logo" class="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#"><i class="fas fa-search icon"></i></a>
+                <a href="profile.html#gps"><i class="fas fa-map-marker-alt icon"></i></a>
+                <a href="profile.html"><i class="fas fa-user icon"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="video-container">
+                <video autoplay muted loop class="background-video">
+                    <source src="intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay"></div>
+            </div>
+            <div class="hero-text">
+                <h1>Welcome to DogMate</h1>
+                <p>DogMate connects dog owners with trusted walkers and sitters, ensuring your furry friend is always in good hands.</p>
+                <a href="services.html" class="cta-button">Learn More</a>
+            </div>
+        </section>
+        <section class="features">
+            <div class="feature-box">
+                <h2>Find a Dogwalker</h2>
+                <p>Locate trusted dogwalkers in your area and track your dog's walks in real-time.</p>
+                <button onclick="location.href='dogwalking.html'" class="feature-button">Find a Dogwalker</button>
+            </div>
+            <div class="feature-box">
+                <h2>Hire a Dogsitter</h2>
+                <p>Find reliable and caring dogsitters to look after your dog while you're away.</p>
+                <button onclick="location.href='dogsitters.html'" class="feature-button">Hire a Dogsitter</button>
+            </div>
+            <div class="feature-box">
+                <h2>Find Your Furry Mate</h2>
+                <p>Find a dog to take care of and be its company.</p>
+                <button onclick="location.href='furrymate.html'" class="feature-button">Find Your Furry Mate</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>All rights reserved ©</p>
+        <p>ID Numbers: 345210470, 213766108, 213515547, 213503238</p>
+    </footer>
+</body>
+</html>
