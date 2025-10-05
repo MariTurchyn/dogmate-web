@@ -95,3 +95,13 @@ No installation required.
 - 🧾 **Worker verification (KYC)**
 
 - 💬 **Persistent chat** with history
+
+
+## Screenshots:
+<img width="1883" height="924" alt="image" src="https://github.com/user-attachments/assets/3b206904-c6c3-4d43-9d3c-07ed170ccd1d" />
+<img width="1915" height="789" alt="image" src="https://github.com/user-attachments/assets/ec19180e-97f3-4dae-a75e-dfa1e3f460db" />
+<img width="1894" height="804" alt="image" src="https://github.com/user-attachments/assets/7ecd7747-2b36-47c2-a271-44fa404ae905" />
+<img width="1882" height="876" alt="image" src="https://github.com/user-attachments/assets/4d5d1089-98c9-4d2e-b432-5b630e49b1f8" />
+<img width="1894" height="894" alt="image" src="https://github.com/user-attachments/assets/88e93ad5-beb5-464e-94d7-725551dc44ff" />
+
+
